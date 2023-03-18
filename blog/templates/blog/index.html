@@ -1,0 +1,49 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+  jubilejní videa
+{% endblock title %}
+
+{% block css_styles %}
+<link rel="stylesheet" href="{% static "blog/post.css" %}"/>
+<link rel="stylesheet" href="{% static "blog/index.css" %}"/>
+{% endblock css_styles %}
+  
+{% block content %}
+  
+<section id="welcome">
+    <header>
+      <img src="{% static "blog/images/kafe.jpg" %}" alt="Eva - The author of this blog" />
+      <h2>VIEVO.cz</h2>
+    </header>
+    <p>Pořiďte si krásnou vzpomínku na svůj vyjímečný den v podobě moderního videa v nejlepší kvalitě.</p>
+  </section>
+
+  <section id="latest-post">
+    <h3>tel: 725 500 095</h3>
+
+    <section id="latest-posts">
+      <h2></h2>
+    
+      <ul>
+        {% for post in posts  %}
+        {% include "blog/includes/post.html" %}
+        {% endfor %}
+      </ul>
+    </section>
+
+    
+  <section id="about">
+    <h2>Má motivace</h2>
+    <p>
+      V moderní době špičkových technologií mou motivací je, neustále se zlepšovat a vytvářet střih a video v nejaktuálnějších softwerech 
+      a s nejmodernějšími technologiemi.
+    </p>
+    <p>
+     Mým cílem je zachytit Váš nezapomenutelný zážitek co nejkvalitněji a vytvořit Vám skutečně vyjímečné video, aby jste si rádi 
+     a často oživili Vaše krásné vzpomínky při jeho sledování
+    </p>
+  </section>
+{% endblock content %}
